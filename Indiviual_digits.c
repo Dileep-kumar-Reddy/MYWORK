@@ -1,3 +1,5 @@
+/*Write a C program to print indiviual digits of a give number*/
+/*Rounded numbers like 100,10000,1000000 won,t work*/
 #include<stdio.h>
 #include<math.h>
 int main()
@@ -11,12 +13,18 @@ int main()
         copy=copy/10;
         i++;
     }
+    printf("%d\n",i);
     while(x!=0)
     {
-        int y=pow(10,i);
-        printf("%d\n",y);
+        int y=pow(10,i-1);
+        if(i-1==0)
+        printf("%2d",x);
+        else
+        {  
         printf("%2d",x/y);
+        x=x-(x/y*y);
+        }
         i--;
-        x=x/10;
+        
     }
 }
