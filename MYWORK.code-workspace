@@ -1,9 +1,7 @@
 {
-	"folders": [
-		{
-			"name": "MYWORK",
-			"path": "."
-		}
-	],
-	"settings": {}
+    "folders": [
+        {
+            "path": "."
+        }
+    ]
 }
