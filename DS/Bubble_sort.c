@@ -1,4 +1,5 @@
 #include<stdio.h>
+int swap(int *,int *);
 int main()
 {
     int i,size;
@@ -12,14 +13,18 @@ int main()
     {
         for(int j=0;j<size-1;j++)
         {
-            if(a[j]>a[j+1])
-            {
-                int temp=a[j+1];
-                a[j+1]=a[j];
-                a[j]=temp;
-            }
+            swap(&a[j],&a[j+1]);
         }
     }
     for(i=0;i<size;i++)
     printf("%3d",a[i]);
+}
+int swap(int *a,int *b)
+{
+    if(*a>*b)
+    {
+        int temp=*b;
+        *b=*a;
+        *a=temp;
+    }
 }
