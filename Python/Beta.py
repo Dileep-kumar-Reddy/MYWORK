@@ -1,3 +1,4 @@
-s="Welcome"
-s1="Welcome"
-print(if s==s1)
+list=[]
+for i in range(6):
+     list.append(input())
+print(list)     
