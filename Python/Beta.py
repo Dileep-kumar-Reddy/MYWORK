@@ -1,4 +1,2 @@
-list=[]
-for i in range(6):
-     list.append(input())
-print(list)     
+age=18
+print("My age is "+str(age))
