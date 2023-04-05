@@ -9,7 +9,7 @@ int createlist();
 int display();
 int main()
 {
-    int choice = 0;
+    int choice;
     while (7)
     {
         printf("1.Create list\n2.Display list\n3.Exit\n");
@@ -26,7 +26,7 @@ int main()
         case 3:
             exit(-1);
         default:
-            printf("Enter Proper choice");
+            printf("Enter Proper choice\n");
         }
     }
 }
