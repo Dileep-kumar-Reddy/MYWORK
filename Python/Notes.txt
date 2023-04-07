@@ -1,0 +1,118 @@
+Strings:
+    strings can be intialized by using assignment operator "=", they  must be enclosed 
+    with single quotes or double quotes or triple single quotes or triple double quotes.
+    ex: string='Hi this sample string'.
+    ex: string="Hi this sample string".
+    ex: string='''Hi this sample string'''.
+    ex: string="""Hi this sample string""".
+    but moreover ''' ''' and """ """ are used to span over string that occur in multiple lines.
+    In case if you want to print '\' in your output that Interpreter thinks that '\' indicates a escape sequence ex:"\n"
+    So if we want print '\' in our output we can use an attribute "r".
+    Ex: >>>print(r'C:\Users\91360\)
+                C:\Users\91360\
+    Here 'r' indicates raw string means print that the as usual in written in the print statement. But no place holders and format specifiers will not work when raw string attribute is used.
+    To overcome these there is an escape sequence '\"' which a '\'.
+    If you want to print ' " ' in your output Enclose the string with in Double quotes and vice versa.
+    string is a collection datatype in python. It is a collection of string literals joined together.
+    Like in C, we can use subscript for strings.
+        Ex: str="Hello, Python"
+        >>>print(str[0])
+           'H'
+    the subscript of strings can have negative index. But it prints the nth character from the ending
+        Ex: >>>print(str[-1])
+        'n'       
+    We can also use slice operator ' : ' to get a specific part of string.
+    The operator needs two integral operands or expressions that must be reduced to integers on evaluation.
+    The Slicing begins from the number at the left operand and ends at the exclusive number of right operand(n-1).
+        Ex: str="Testing Slice"
+        >>>print(str[2:6])
+           'sti'
+    if both the operand were left empty then it whole string by taking the start as left and right as ending.
+    We can also give a Negative index.
+    But every time when we use slice operator it steps by 1 like incrementing. We can set the step value.
+        >>>print("str[2:8:2])
+        'sig'
+    Here it starts printing from second character and then goes to print print 4th character and then 6th.
+    In this we can use slice operator.
+    Strings can be concatenated by using '+'.
+    use count() method to print no.of occurances of the sub string in a string. It returns the count of no.of occurances.
+    captalize() makes the first letter of the string uppercase. returns string.
+    casefold() returns the string in lowercase.
+    count() counts the occurance of the substring irrespective of case.And returns the count.
+    endswith() Return True if S ends with the specified suffix, False otherwise. With optional start, test S beginning at that position. With optional end, stop comparing S at that position. suffix can also be a tuple of strings to try.
+    find() Return the lowest index in S where substring sub is found,
+    such that sub is contained within S[start:end]. Optional arguments start and end are interpreted as in slice notation. Return -1 on failure.
+    isalnum() Return True if the string is an alpha-numeric string, False otherwise.
+    isdecimal() Return True if the string is a decimal string, False otherwise.
+    A string is a decimal string if all characters in the string are decimal and there is at least one character in the string. return bool
+
+A string is alpha-numeric if all characters in the string are alpha-numeric and there is at least one character in the string.
+Logical operators:
+    and,not,or
+    and:
+    it Need two expressions which resolve to True or False(mostly using comparitive operators)
+    if both expressions are resolved to be 1 then the whole expressions is True and releated statements gets execueted according to program
+    condition_1 and condition_2
+    or:
+    It also needs two expressions which should to True or False
+    If one of the expressions is True then the Whole expressions is True
+    condition_1 or condition_2
+    not:
+    It requires only a single expression which must be reduced to True or False 
+    It flips the result, True to Flase and Viceversa.
+Loops:
+    while,for
+    while:
+    A while is used to make statements repetitive until a specific condition is becomes True.
+    That means we need to use while when the no.of loop cycles is unknown or based on a expression.
+    syntax:
+        while condition:
+            statement(s)
+    until the condition returns True to the while the statements inside the loop keep execueting. 
+    for:
+    A for loop is used when the no.of loop cycles is known.
+    for can be used to iterarate over numbers and over collection datatypes like lists,tuples.
+    range() is used to iterarate over number
+     ex:for i in range(10) #iterarates over 0 to 9
+     for i in range(1,10) @iterarates over 1 to 9 by step 1
+     for i in rabge(1,10,2) #iterarates over 1 to 9 by step 2 1,3,5,9
+    A nested for loop can create a matrix form.
+Unconditional Statements:
+    break,pass,continue
+    break:
+    A break statement is used to make control go out of loop.In case nested loop if break is used in inner loop the just  goes to outer loop but not out of the entire loop. Moreover break statement is used inside a if condition. That means if a specific condition is met we are going to break the loop unconditionally.
+    Continue:
+    Generally, Loops are used to generalize a process but sometimes there may be steps that we dont want to occur but the problem they comes under the process generalizing. so prevent those steps we just use continue statement.
+    pass:
+    Continue and pass are same.
+Lists:
+    Lists are like arrays, But the main difference is arrays allows us to store only data which belongs to same datatype
+    but lists in python allows us to store data that belongs to multiple datatypes.
+    The items in it are enclosed by a square brackets and are seperated by commas,
+    ex: Samlist=["22ME1A05D8",99,34.5]
+    lists can be indexed. we can use slice operator. Negative indexes gives the last nth item.
+    Lists can also be concatenated by using '+'.
+    It is a sequence collection datatype. A for loop can be used to roll over over it.
+    the items in the list are changeable during the execuetion.
+    Use append() to add an item at the end of the list. The append function takes only one argument.
+    Use remove() to remove an item from the list. The remove takes directly the item as input.
+    We can only pass a single argument at a time.   
+    Use pop() to remove an item from the list. If no argument is passed by default it removes the last element.
+    We can pass an index as an argument to delete an element at specific position.
+    pop() returns the removed element.
+    clear() used to remove all the elements in a list.
+    copy() Takes no arguments but returns a shallow copy of the list.
+    count() takes one argument and counts the appearance of the argument in the list. It also returns the count.
+    Extend() used to add any iterarative sequence collection datatype to the list.
+    index() used to print the index of an item present in the list. If not rises an error. returns int.
+    insert() takes two arguments
+    insert(index,addonitem) it inserts an item at before index.
+    reverse() used to reverse a list
+2-D list:
+    they are used to create a matrix form.
+    list2D=[[],[],[]]
+    list2D=[list1,list2,list3]   
+    2D lists can be indexed list[2][2] print 2nd element in the 2nd list.
+Tuple:
+    A tuple is also used to store items of multiple datatypes but the only thing that differs from list is that the values in the tuple can be changed if once intialized.
+    The values for the tuple are enclosed with in a parenthesis and are seperated by commas. A tuple does not promote repeated values ln it.                         
