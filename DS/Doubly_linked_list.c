@@ -6,7 +6,7 @@ struct node
     int data;
     struct node *prev;
     struct node *next;
-} *start, *newnode, *ptr;
+} *start, *newnode;
 int disp()
 {
     struct node *ptr;
@@ -21,56 +21,59 @@ int disp()
 }
 int at_beg()
 {
-    newnode=(struct node*)malloc(sizeof(struct node));
-    newnode->prev=NULL;
+    newnode = (struct node *)malloc(sizeof(struct node));
+    newnode->prev = NULL;
     printf("Enter data:");
-    scanf("%d",&data);
-    newnode->data=data;
-    newnode->next=start;
-    start=newnode;
+    scanf("%d", &data);
+    newnode->data = data;
+    newnode->next = start;
+    start = newnode;
 }
 int at_pos()
 {
-    ptr=start;
-    int i=1,pos;
+    struct node *ptr;
+    ptr = start;
+    int i = 1, pos;
     printf("Enter position to enter data:");
-    scanf("%d",&pos);
-    while(i<pos-1)
+    scanf("%d", &pos);
+    while (i < pos - 1)
     {
-        ptr=ptr->next;
+        ptr = ptr->next;
         i++;
     }
-    newnode=(struct node*)malloc(sizeof(struct node));
+    newnode = (struct node *)malloc(sizeof(struct node));
     printf("Enter data:");
-    scanf("%d",&data);
-    newnode->data=data;
-    newnode->prev=ptr;
-    newnode->next=ptr->next;
-    ptr->next->prev=newnode;
-    ptr->next=newnode;
+    scanf("%d", &data);
+    newnode->data = data;
+    newnode->prev = ptr;
+    newnode->next = ptr->next;
+    ptr->next->prev = newnode;
+    ptr->next = newnode;
 }
 int at_end()
 {
+    struct node *ptr;
+    ptr = start;
     printf("Enter data:");
-    scanf("%d",&data);
-    newnode=(struct node*)malloc(sizeof(struct node));
-    if(newnode==NULL)
+    scanf("%d", &data);
+    newnode = (struct node *)malloc(sizeof(struct node));
+    if (newnode == NULL)
     {
         printf("Unable to allocate memory");
         return 0;
     }
-    ptr=start;
-    while(ptr!=NULL)
+    while (ptr != NULL)
     {
-        ptr=ptr->next;
+        ptr = ptr->next;
     }
-    newnode->prev=ptr->next;
-    newnode->data=data;
-    newnode->next=NULL;
+    newnode->prev = ptr->next;
+    newnode->data = data;
+    newnode->next = NULL;
     return 0;
 }
 int main()
 {
+    struct node *ptr;
     int i, n, choice;
     printf("Enter no.of nodes:");
     scanf("%d", &n);
