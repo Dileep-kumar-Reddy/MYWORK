@@ -1,23 +1,26 @@
 #include<stdio.h>
-int insertion(int [],int,int);
 int main()
 {
-    int i,size;
-    printf("Enter the size of array:");
-    scanf("%d",&size);
-    int a[size];
-    for(i=0;i<size;i++)
+    int i,n;
+    printf("Enter no.of elements in array:");
+    scanf("%d",&n);
+    int a[n];
+    printf("Enter elements in array:");
+    for(i=0;i<n;i++)
+    scanf("%d",&a[i]);
+    for(i=0;i<n;i++)
     {
-        scanf("%d",&a[i]);
         int j=i;
-        while(j>0&&a[j-1]>a[j])
+        while(j>0&&a[j]<a[j-1])
         {
-            int temp=a[j-1];
-            a[j-1]=a[j];
-            a[j]=temp;
+            int temp=a[j];
+            a[j]=a[j-1];
+            a[j-1]=temp;
+            j--;
         }
     }
-    for(i=0;i<size;i++)
-    printf("%d",a[i]);
-    
+    printf("Insertion sorted array:");
+    for(i=0;i<n;i++)
+    printf("%3d",a[i]);
+
 }
