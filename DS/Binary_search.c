@@ -11,7 +11,7 @@ int main()
     i = 1;
     printf("Enter an element to search:");
     scanf("%d", &key);
-    while (beg <= size)
+    while (end!=0||end!=size)
     {
         int mid = (beg + end) / 2;
         if (a[mid] == key)
