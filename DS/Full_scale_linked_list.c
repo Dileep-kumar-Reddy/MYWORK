@@ -6,7 +6,7 @@ struct node
     struct node *next;
 } *start, *newnode, *ptr;
 typedef struct node NODE;
-int data,nodes_count;
+int data, nodes_count;
 int display()
 {
     ptr = start;
@@ -60,7 +60,7 @@ int Create_list()
     display();
     return 0;
 }
-int del_at_beg() // defective
+int del_at_beg()
 {
     if (start == NULL)
     {
@@ -112,7 +112,7 @@ vk:
     }
     else if (pos > 1 && pos < nodes_count)
     {
-        while (i <= pos)
+        while (i <= pos - 1)
         {
             preptr = ptr;
             ptr = ptr->next;
@@ -120,15 +120,15 @@ vk:
         }
         preptr->next = ptr->next;
         free(ptr);
+        nodes_count--;
+        display();
+        return 0;
     }
     else
     {
         printf("Enter correct position\n");
         goto vk;
     }
-    nodes_count--;
-    display();
-    return 0;
 }
 int ins_at_end()
 {
@@ -203,7 +203,7 @@ int ins_at_pos()
             printf("Enter data:");
             scanf("%d", &data);
             ptr = start;
-            while (i < pos - 1)
+            while (i < pos)
             {
                 ptr = ptr->next;
                 i++;
@@ -212,6 +212,9 @@ int ins_at_pos()
             newnode->data = data;
             newnode->next = ptr->next;
             ptr->next = newnode;
+            nodes_count++;
+            display();
+            return 0;
         }
         else
         {
@@ -219,9 +222,6 @@ int ins_at_pos()
             goto vk;
         }
     }
-    nodes_count++;
-    display();
-    return 0;
 }
 int insertion()
 {
