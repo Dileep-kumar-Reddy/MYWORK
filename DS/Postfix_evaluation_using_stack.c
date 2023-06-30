@@ -19,9 +19,9 @@ int main()
     gets(exp);
     while (exp[i] != '\0')
     {
-        exp[i] = exp[i] - 48;
         if (isdigit(exp[i]))
         {
+            exp[i] = exp[i] - 48;
             push(exp[i]);
         }
         else
@@ -40,7 +40,7 @@ int main()
                 push(opr_1 / opr_2);
             }
         }
+        i++;
     }
-    i++;
     printf("%d", pop());
 }
