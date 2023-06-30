@@ -16,7 +16,7 @@ int main()
     char exp[20];
     int i = 0, opr_1, opr_2;
     printf("Enter a postfix expression:");
-    scanf("%s", exp);
+    gets(exp);
     while (exp[i] != '\0')
     {
         exp[i] = exp[i] - 48;
