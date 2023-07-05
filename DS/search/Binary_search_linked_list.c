@@ -17,7 +17,7 @@ NODE *shift(int pos)
 {
     int i = 1;
     ptr = head;
-    while (i != pos)
+    while (i <= pos)
     {
         ptr = ptr->next;
         i++;
@@ -39,7 +39,7 @@ int binary_search(int k, int n)
         }
         else
         {
-            if (flag->data > k)
+            if (k < flag->data)
             {
                 l_boun = 0;
                 r_boun = mid - 1;
