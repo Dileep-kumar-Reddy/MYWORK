@@ -4,67 +4,63 @@ struct node
 {
     int data;
     struct node *next;
-} *start = NULL, *ptr;
+} *head = NULL, *ptr = NULL, *temp = NULL;
 typedef struct node NODE;
-int bubble_sort()
-{
-    ptr = start;
-    while (ptr != NULL)
-    {
-        if (ptr->data > ptr->next->data)
-        {
-            int data = ptr->data;
-            ptr->data = ptr->next->data;
-            ptr->next->data = data;
-        }
-    }
-    return 0;
-}
-NODE *allocate(int data)
+NODE *allocate()
 {
     NODE *dummy;
     dummy = (NODE *)malloc(sizeof(NODE));
-    dummy->data = data;
     dummy->next = NULL;
     return dummy;
 }
-NODE *display()
+int bubble_sort()
 {
-    if (start == NULL)
-        return NULL;
-    else
+    int data;
+    ptr = head;
+    temp = ptr->next;
+    while (ptr != NULL)
     {
-        ptr = start;
-        while (ptr != NULL)
+        if (ptr->data > temp->data)
         {
-            printf("%d->", ptr->data);
-            ptr = ptr->next;
+            data = ptr->data;
+            ptr->data = temp->data;
+            temp->data = data;
         }
+        ptr = temp;
+        temp = temp->next;
     }
-    return NULL;
+    return 0;
+}
+int display()
+{
+    ptr = head;
+    while (ptr != NULL)
+    {
+        printf("%d->", ptr->data);
+        ptr = ptr->next;
+    }
+    printf("NULL\n");
 }
 int main()
 {
     int nodes_count, data;
-    NODE *add = NULL;
     printf("Enter no.of nodes:");
     scanf("%d", &nodes_count);
-    for (int i = 0; i < nodes_count; i++)
+    head = allocate();
+    printf("Enter data:");
+    scanf("%d", &data);
+    ptr = head;
+    ptr->data = data;
+    for (int i = 0; i < nodes_count - 1; i++)
     {
-    vk:
         printf("Enter data:");
         scanf("%d", &data);
-        add = allocate(data);
-        if (start == NULL)
-        {
-            start = add;
-            ptr = add;
-            i++;
-            goto vk;
-        }
-        ptr->next = add;
+        temp = allocate();
+        temp->data = data;
+        ptr->next = temp;
         ptr = ptr->next;
     }
+    display();
     bubble_sort();
     display();
 }
