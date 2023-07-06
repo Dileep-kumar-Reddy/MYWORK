@@ -5,6 +5,7 @@ struct node
     int data;
     struct node *next;
 } *head = NULL, *ptr = NULL, *temp = NULL;
+int nodes_count, data;
 typedef struct node NODE;
 NODE *allocate()
 {
@@ -16,20 +17,22 @@ NODE *allocate()
 int bubble_sort()
 {
     int data;
-    ptr = head;
-    temp = ptr->next;
-    while (ptr != NULL)
+    for (int i = 0; i < nodes_count; i++)
     {
-        if (ptr->data > temp->data)
+        ptr = head;
+        temp = ptr->next;
+        while(temp!=NULL)
         {
-            data = ptr->data;
-            ptr->data = temp->data;
-            temp->data = data;
+            if (ptr->data > temp->data)
+            {
+                data = ptr->data;
+                ptr->data = temp->data;
+                temp->data = data;
+            }
+            ptr = temp;
+            temp = temp->next;
         }
-        ptr = temp;
-        temp = temp->next;
     }
-    return 0;
 }
 int display()
 {
@@ -43,7 +46,6 @@ int display()
 }
 int main()
 {
-    int nodes_count, data;
     printf("Enter no.of nodes:");
     scanf("%d", &nodes_count);
     head = allocate();
