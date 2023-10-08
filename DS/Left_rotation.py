@@ -8,3 +8,4 @@ while d:
     array[-1] = temp
     d -= 1
 print(array)
+# time complexicity O(n*d)
