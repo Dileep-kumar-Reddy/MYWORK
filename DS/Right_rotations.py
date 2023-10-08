@@ -9,3 +9,4 @@ while d:
     d -= 1
 
 print(array)
+# time complexicity O(n*d)
