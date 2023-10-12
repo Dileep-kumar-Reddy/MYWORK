@@ -1,6 +1,8 @@
 def InterpolationSearch(start: int, end: int, arr: list, key: int) -> int:
     while start < end:
-        pos = start + ((end - start) - (arr[end] - arr[start])) * (key - arr[start])
+        pos = int(
+            start + ((end - start) - (arr[end] - arr[start])) * (key - arr[start])
+        )
         if arr[pos] == key:
             return pos + 1
         elif arr[pos] > key:
