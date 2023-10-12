@@ -1,3 +1,4 @@
+
 #include <stdio.h>
 int ternery_search(int l, int r, int key, int a[])
 {
