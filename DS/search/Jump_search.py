@@ -1,3 +1,6 @@
+from math import sqrt
+
+
 def LinearSearch(start: int, stop: int, arr, key: int) -> int:
     for i in range(start, stop + 1, 1):
         if arr[i] == key:
@@ -17,5 +20,4 @@ def JumpSearch(arr: list, key: int, m: int) -> int:
 
 array = list(map(int, input("Enter the array:").split()))
 key = int(input("Enter the key:"))
-m = int(input("Enter block size:"))
-print(JumpSearch(array, key, m))
+print(JumpSearch(array, key, int(sqrt(len(array))) + 1))
