@@ -1,27 +1,15 @@
-import time
+def BinarySearch(arr: list, key: int, start: int, stop: int) -> int:
+    while start <= stop:
+        mid = (start + stop) // 2
+        if arr[mid] == key:
+            return mid + 1
+        elif arr[mid] > key:
+            stop = mid - 1
+        elif arr[mid] < key:
+            start = mid + 1
+    return -1
 
 
-class BinarySearch:
-    def __init__(self, arr: list, ele: int) -> None:
-        self.array = arr
-        self.key = ele
-
-    def Searching(self) -> int:
-        left = 0
-        right = len(self.array) - 1
-        while left <= right:
-            mid = left + (right - left) // 2
-            if self.array[mid] == self.key:
-                return mid + 1 + 1
-            elif self.key < self.array[mid]:
-                right = mid - 1
-            else:
-                left = mid + 1
-        return -1
-
-
-a = BinarySearch([1, 3, 4, 5, 10, 42], 3)
-start_time = time.time()
-print(a.Searching())
-end_time = time.time()
-print("Execution time: {:.6f} seconds".format(end_time - start_time))
+array = list(map(int, input("Enter the array:").split()))
+key = int(input("Enter key value:"))
+print(BinarySearch(array, key, 0, len(array) - 1))

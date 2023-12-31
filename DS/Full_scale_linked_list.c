@@ -17,7 +17,7 @@ int display()
     }
     else
     {
-        while (ptr != NULL)
+        while (ptr)
         {
             printf("%d->", ptr->data);
             ptr = ptr->next;
